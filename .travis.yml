@@ -4,20 +4,22 @@ node_js:
 - '7.0'
 sudo: false
 after_script: bash <(curl -s https://codecov.io/bash)
-#deploy:
-#  - provider: npm
-#    email: jalonsonunez@gmail.com
-#    api_key:
-#      secure: ###
-#    on:
-#      tags: true
-#      node: '4.0'
-#  - provider: releases
-#    api_key:
-#      secure: ####
-#    file:
-#      - "syllable-es.js"
-#      - "syllable-es.min.js"
-#    on:
-#      tags: true
-#      node: '7.0'
+deploy:
+  - provider: releases
+    email: jalonsonunez@gmail.com
+    api_key:
+      secure: ubEx7gwFF4RZu7lIMHLTDthmSefnDy+EpArcD7peMLNGaXg8tNjol7QBt4A1yNzgzyQBu+b+TC9tvUImZAiX6pdWqpEPsRmNHP0y7Tql15xTeA8Yb7XZFNX3CErjP+zZYW8hiGxq//jq2BYksHLEdpd7nxJ6xd+m9ws5PtoiRJmQD5IEcsA0a7xw8vetUFp2GQT7cnTvixS5ZT/3hgxLliJh2Kkb3KmT87tHIsuimtTIHaANXpJHVNZ5DWqpFZEqiszre2yEsbNey+xazi3YVxxRpDK0c5SAedwhDc0DJCD4WTca8MQhqU9Cp6f27rc/N/6qbqtKANYht9576LgspAknZrmuvzvrhU3F3+a9+uxKDVU+YjR30h6uyXB3x+VTX2hvnkU0/I2OYhzJYqNKFPuTsy914nrCrWvlNrZd2pHC402c67SlmfAia/1ccIYt7UK6XnMTDnfTO7EYZYvL8ncFltvFeq61pJryPOIP5fADmSsWdBWBZGSWw3Ob/yxNp7if27ITOZOWXigM+24hiKYEh40czH3WWpFfKdSg7bdadu8P6uCmt8zr8vnW6sHbnEIoz4HMNiXYoDm5khzNhyMVudQckyTRQzwaV2HU4EI6+Kf2Nv7d0Zf1cgl9o1Lo/f9QHYYjTbmbWsUvUVGcvLQtkzGKfaGGuCT63SpwwR4=
+    file:
+      - "build/syllable-es.js"
+      - "build/syllable-es.min.js"
+    on:
+      repo: javalon/syllable-es
+      tags: true
+      node: '7.0'
+  - provider: npm
+    email: jalonsonunez@gmail.com
+    api_key:
+      secure: sfb0F5vq2hTiUTYoOVETKvxku/00kctNPelTtWx5INfZYMiOBGvRbUb65j14EYKpYJdwQ1HKHtMTTEJp7of2KPx1PagzBvR5m+I6yzcILWWJsyHi9dSikTr1gs2G/EknzHF6hPzeq44zuTwkZzxjIKmowwQxGUMAj8sU2s+J3dkxyQ0YanvDc36/9ufzxqWP99wVJXNabg85X33o2wb/GBD+wRQfzd9scwXF6Q83UKdA/j67AGGkyjxt3WENx83yZwOHlLzN/nOY2mMvYnc021p6jK+Rp6inpZJKcPAOoItDL7TTmPb8Axo24LI+vTgF++aQ6OsNEd8BmcAccn9pMpJL7Egm0cqidILnm6x/n1Mo5YhAsKy78NQsdkMrHU2LUqWicCVsGX44T60C5MHCYT8FORMoUq9dymok1D1TRQ87+9uFOgmOw5uj6lBCvrArKMHfvX1whnBNpkY267tPidL1h44ldkXNqDoZjX75jeOMl6YL33+7lnUdoqLtUllPf+zMzhqZEHgHCprutuyivKGijCFQQ0kZty9Kg6FT9QBSqGlyeokS/6PgHWiXH92qvmlGc5IjweFMgVyNe3dOAqD5d53crddWzJCjCOCJ+GnZuaSRED0RXjpSvMe0K7T6wZPb11lMa13YTVr5aG+XCD3YOJfyonoyV02n5ciW1A4=
+    on:
+      tags: true
+      node: '4.0'
