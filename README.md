@@ -1,5 +1,6 @@
 
-# Syllable-es
+# Syllable-es 
+[![Build Status](https://travis-ci.org/javalon/syllable-es.svg?branch=master)](https://travis-ci.org/javalon/syllable-es)
 
 ### woorm/syllable para idoma Español
 
