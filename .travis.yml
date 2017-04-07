@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- '4.0'
+- '7.0'
+sudo: false
+after_script: bash <(curl -s https://codecov.io/bash)
+#deploy:
+#  - provider: npm
+#    email: jalonsonunez@gmail.com
+#    api_key:
+#      secure: ###
+#    on:
+#      tags: true
+#      node: '4.0'
+#  - provider: releases
+#    api_key:
+#      secure: ####
+#    file:
+#      - "syllable-es.js"
+#      - "syllable-es.min.js"
+#    on:
+#      tags: true
+#      node: '7.0'

@@ -1,0 +1,63 @@
+{
+  "name": "syllable-es",
+  "version": "1.0.0",
+  "description": "Count syllables in Spanish words",
+  "main": "src/index.js",
+  "scripts": {
+    "prepublish" : "npm run build",
+    "build-md": "remark . -qfo",
+    "build-bundle": "[ -d build ] || mkdir build && browserify ./src/index.js -s syllable > ./build/syllable-es.js",
+    "build-mangle": "esmangle ./build/syllable-es.js > ./build/syllable-es.min.js",
+    "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+    "lint": "xo",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "keywords": [
+    "detect",
+    "syllables",
+    "language",
+    "cli",
+    "bin",
+    "spanish",
+    "silabas",
+    "español",
+    "contar"
+  ],
+  "author": "Javier Alonso",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^1.0.0",
+    "esmangle": "^1.0.1",
+    "execa": "^0.6.3",
+    "nyc": "^10.2.0",
+    "remark-cli": "^3.0.0",
+    "tape": "^4.6.3",
+    "xo": "^0.18.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "xo": {
+    "space": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/explicit-length-check": "off",
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "syllable.js"
+    ]
+  },
+  "dependencies": {
+    "trim": "0.0.1",
+        "normalize-strings": "^1.1.0"
+  },
+  "bin":{
+    "syllable-es": "src/cli.js"
+  }
+}
