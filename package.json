@@ -1,6 +1,6 @@
 {
   "name": "syllable-es",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Count syllables in Spanish words",
   "main": "src/index.js",
   "scripts": {
